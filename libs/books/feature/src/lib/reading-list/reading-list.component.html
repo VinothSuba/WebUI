@@ -8,6 +8,10 @@
       <div class="reading-list-item--details--author">
         {{ b.authors.join(',') }}
       </div>
+      <div class="example-button-row">
+        <button mat-button color="primary" (click) = "markAsFinished(b)">Finished</button>
+        <p color="accent">{{ b.finishedDate }}</p>
+      </div>
     </div>
     <div>
       <button
