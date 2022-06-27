@@ -8,9 +8,9 @@
       <div class="reading-list-item--details--author">
         {{ b.authors.join(',') }}
       </div>
-      <div class="example-button-row">
-        <button mat-button color="primary" (click) = "markAsFinished(b)">Finished</button>
-        <p color="accent">{{ b.finishedDate }}</p>
+      <div class="finish-content-row">
+        <button data-testing="finish-reading" class="finish-btn" mat-button color="{{ b.finished ? 'primary' : 'accent'}}" (click) = "markAsFinished(b)">Finished</button>
+        <div *ngIf="b.finished" class="finish-date" color="accent">{{ b.finishedDate }}</div> 
       </div>
     </div>
     <div>
